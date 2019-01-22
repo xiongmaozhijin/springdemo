@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main.dao.UserDao">
+
+    <select id="findUserById" parameterType="int" resultType="main.domain.DbUser">
+        select * from user where iduser = #{iduser}
+    </select>
+
+    <select id="findAllUsers" resultType="main.domain.DbUser">
+        select * from user
+    </select>
+
+    <insert id="insertUser" parameterType="main.domain.DbUser">
+        insert into user(username, password,age) values(#{username}, #{password}, #{age})
+    </insert>
+
+    <delete id="deleteUserById" parameterType="int">
+        delete from user where iduser = #{iduser}
+    </delete>
+
+    <update id="updateUserPassword" parameterType="main.domain.DbUser">
+        update user set password=#{password} where iduser = #{iduser}
+    </update>
+
+</mapper>

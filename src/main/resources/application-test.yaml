@@ -1,2 +1,13 @@
 env:
   tip: TEST
+
+mybatis:
+  type-aliases-package: main.domain
+  mapper-locations:  classpath:mapper/*.xml
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatisdemo?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 112233
+    driver-class-name: com.mysql.cj.jdbc.Driver
